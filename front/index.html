@@ -1,30 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <head> <link rel="stylesheet" href="styles/reset.css">
-      <link rel="stylesheet" href="styles/styles.css">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mi preotecto M2</title>
+    <head> <link rel="stylesheet" href="styles/reset.css">
+      <link rel="stylesheet" href="styles/styles.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <title>Mi proytecto M2</title>
   </head>
   <body>
     <header>
         <div class="barra-color"></div>
       <h1>Movie night</h1>
-      <nav>
-          <ul class="lista">
-            <li><a href="pages/about.html">Sobre nosotros</a></li>
-              <li><a href="pages/movies.html">Peliculas</a></li>
-              <li><a href="pages/history.html">Historia del cine</a></li>
-                  </ul>
-  </nav>
-
-  <article><h1>Peliculas</h1></article>
-    <div id="contenedor-peliculas" class="peliculas-container">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">
+            <img src="./assets/http_movies-removebg-preview.png" alt="Logo" width="150" height="150" class="d-inline-block align-text-top">
+            <div></div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link" href="#pages/about.html">About</a>
+                <a class="nav-link" href="#pages/history.html">Historia del cine</a>
+                <a class="nav-link" href="#pages/movies.html">Peliculas</a>
+            </div>
+          </div>
+        </nav>
+      </header>
+<section class="seccion"><div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="./assets/aquaman.jpg" class="d-block w-100" alt="aquaman">
     </div>
-  </header>
+    <div class="carousel-item">
+      <img src="./assets/coco.jpg" class="d-block w-100" alt="coco">
+    </div>
+    <div class="carousel-item">
+      <img src="./assets/1366_2000.jpeg" class="d-block w-100" alt="vengadores">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div></section>
 
-    <script src="./scripts/tempData.js"></script>
-    <script src="./scripts/index.js"></script>
+
+  <section class="seccion"><article>
+    <h1 class="titulo"> </h1> Peliculas</h1>
+  </article>
+  <div id="contenedor-peliculas" class="peliculas-container"></div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./public/bundle.js"></script>
   </body>
+  <footer></footer>
 </html>

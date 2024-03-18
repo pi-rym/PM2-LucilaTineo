@@ -25,55 +25,73 @@
     padding: 20px;
   }
   
-  /* Estilos para la navegación */
-  nav {
-    font-size: 2em;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 92vw;
-    border-radius: 0.2em;
-    margin-bottom: 1em;
-    padding: 1em;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
-  
-  nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav ul li {
-    display: inline;
-    margin-right: 20px;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: white;
-  }
-
-body {
-    background: linear-gradient(135deg, #1c1b4d, #b80e65); /* Degradado lineal */
-    margin: 0; /* Eliminar el margen predeterminado del cuerpo */
-    padding: 0; /* Eliminar el relleno predeterminado del cuerpo */
+/* Estilos para la barra de navegación */
+.container-fluid {
+  background-color: #585858; /* Cambia el color de fondo según tus preferencias */
+}
+.navbar {
+  background-color: #585858; /* Cambia el color de fondo según tus preferencias */
 }
 
+.navbar-nav {
+  margin-left: auto; /* Alinea los elementos a la derecha */
+  background-color: #585858;
+}
 
-/* Estilos para la tarjeta de película */
+.navbar-nav .nav-link {
+  color: #ff1cc0; /* Cambia el color del texto de los enlaces */
+  margin-right: 10px; /* Espacio entre los elementos de la barra de navegación */
+  font-size: 20px;
+}
+
+.navbar-nav .nav-link.active {
+  font-weight: bold; /* Estilo para el enlace activo */
+  font-size: 20px;
+  color: #ff1cc0;
+}
+
+.navbar-toggler {
+  border-color: #d34444; /* Cambia el color del botón del toggler */
+}
+
+.navbar-toggler-icon {
+  background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba(0, 0, 0, 0.5)" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+  /* Cambia el icono del toggler, este es solo un ejemplo */
+}
+
+/* Ajustes para la imagen del logo */
+.navbar img {
+  margin-right: 10px; /* Espacio a la derecha del logo */
+}
+
+.seccion {
+  margin-bottom: 50px; /* Agrega un margen inferior de 20px entre cada sección */
+}
+
+.titulo {
+  text-align: center; /* Centra el título VER PORQUE NO FUNCIONA */
+  margin-bottom: 20px; /* Agrega espacio entre el título y el contenedor */
+  font-family: Arial, sans-serif; /* Cambia la tipografía del título */
+  font-size: 60px; /* Cambia el tamaño de la fuente del título */
+}
+
+.peliculas-container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente los elementos hijos */
+}
+
 .pelicula-card {
-    border: 1px solid #ffffff;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    overflow: hidden;
-    background-color: #ffffff;
-    box-shadow: 0 4px 6px rgb(0, 0, 0);
-    width: 270px; /* Establece el ancho de la imagen en 300 píxeles */
-    height: 550px; /* Establece la altura de la imagen en 200 píxeles */
-    display: inline-block;
-    position: relative;
+  /* Estilos para cada tarjeta de película */
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  margin-right: 20px; /* Espacio entre cada tarjeta */
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgb(0, 0, 0);
+  width: 270px; /* Establece el ancho de cada tarjeta */
+  height: 550px; /* Establece la altura de cada tarjeta */
 }
+
 
 /* Estilos para la imagen de la película */
 .pelicula-imagen {
@@ -103,4 +121,31 @@ body {
     font-size: 18px;
     color: #1c1b4d; /* Color del texto del contenido */
     font-family: 'Helvetica', sans-serif; /* Familia de fuentes para el contenido */
+}
+
+
+/* Estilos para el footer */
+footer {
+  background-color: #333; /* Color de fondo del footer */
+  color: #fff; /* Color del texto del footer */
+  padding: 20px; /* Espaciado interno del footer */
+  text-align: center; /* Alineación del texto al centro */
+}
+
+/* Estilos para los enlaces del footer */
+footer a {
+  color: #fff; /* Color del texto de los enlaces */
+  text-decoration: none; /* Sin subrayado en los enlaces */
+}
+
+/* Estilos para los enlaces del footer al pasar el ratón por encima */
+footer a:hover {
+  text-decoration: underline; /* Subrayado al pasar el ratón por encima */
+}
+
+
+body {
+  background-color: #d11b1b;
+    margin: 0; /* Eliminar el margen predeterminado del cuerpo */
+    padding: 0; /* Eliminar el relleno predeterminado del cuerpo */
 }
