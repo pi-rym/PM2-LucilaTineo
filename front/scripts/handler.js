@@ -2,10 +2,15 @@ const axios = require('axios');
 
 const renderFilms = require ('./renderFilms')
 
-const getPeliculas = () => {
-    axios.get('https://localhost:3000/movies')
-    .then(({data}) => data.forEach(getPeliculas))
-    .catch((error) => console.log(error.response.data))
+const getPeliculas = async () => {
+    try{
+    const {data} = await axios.get('https://localhost:3000/movies')
+    console.log(data);
+    data.forEach(renderFilms)
+
+
+    } catch(error) { console.log(error.message)
+}
 }
 
       module.export = getPeliculas

@@ -1,0 +1,68 @@
+/*Creación de una vista de formulario para la creación de películas.
+
+Crear en nuestra aplicación de FrontEnd una vista de formulario, agregando además un nuevo enlace a la barra de navegación que hayas creado.
+
+Incluir en el formulario un input para cada uno de los campos que se requieren para la creación de una nueva película y dos botones: uno para enviar el formulario y otro para limpiar los inputs.
+
+Implementar una función que maneje el evento de limpieza del formulario y se encargue de seleccionar y vaciar el value de los inputs.
+
+Implementar una función que maneje el evento de envío de formulario, que por el momento se encargará de seleccionar los inputs, y validar que todos los datos estén completos. Asumimos para esta actividad que TODOS los datos son obligatorios.*/
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <head> <link rel="stylesheet" href="../styles/reset.css">
+      <link rel="stylesheet" href="../styles/styles.css">
+  </head>
+  <body>
+    <header>
+        <div class="barra-color"></div>
+      <h1>Movie night</h1>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">
+            <img src="../assets/http_movies-removebg-preview.png" alt="Logo" width="150" height="150" class="d-inline-block align-text-top">
+            <div></div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link" href="#pages/about.html">About</a>
+                <a class="nav-link" href="#pages/history.html">Historia del cine</a>
+                <a class="nav-link" href="#pages/movies.html">Peliculas</a>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+    <section id="addMovie">
+        <div></div> <article><h1>Añade tus peliculas favoritas</h1></article>
+             <form id="movies-form">
+                 <legend> Crea tu pelicula</legend>
+                 <label for="title">Título:</label>
+                 <input type="text" id="title" name="titulo" required><br><br>
+
+                 <label for="year">Año:</label>
+                 <input type="number" id="year" name="año" required><br><br>
+
+                 <label for="director">Director:</label>
+                 <input type="text" id="director" name="director" required><br><br>
+
+                 <label for="duration">Duración:</label>
+                 <input type="text" id="duration" name="duración" required><br><br>
+
+                 <label for="genre">Género:</label>
+                 <input type="text" id="genre" name="género" required><br><br>
+         
+                 <label for="poster">URL de la imagen:</label>
+                 <input type="url" id="image" name="poster" required><br><br>
+         
+                 <button type="submit"> Agregar pelicula </button>
+                 <button type="button" onclick="cleanForm()">Limpiar</button>
+             </form>
+             </section>
+            <h2>Peliculas Cargadas</h2>
+            <ul id = "movieList"></ul>
+
+            <script src="../scripts/movieForm.js"></script>
+        </body>
+        </html>
