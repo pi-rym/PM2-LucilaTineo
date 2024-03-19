@@ -8,10 +8,10 @@ class Movie {
       this.year = year;
       this.director = director;
       this.duration = duration;
-        this.genre = genre;
-        this.rate = rate;
-        this.poster = poster;
+      this.genre = genre;
+      this.rate = rate;
+      this.poster = poster;
     }
   }
   
-  module.exports = Movie;
+  module.exports = {Movie};

@@ -10,10 +10,10 @@ app.use(cors());
 app.use(express.json());
 
 
-app.use((req, res, next)=> {
+/*app.use((req, res, next)=> {
     console.log("estamos pasando por mi propio middleware");
     next();
-});
+});*/
 
 app.use(router);
 
