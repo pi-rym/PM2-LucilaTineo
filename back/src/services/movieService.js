@@ -1,42 +1,16 @@
-const {Movie} = require("../types/class")
-const Movies = require("../models/movie")
+//const {Movie} = require("../types/class")
+const Movie = require("../models/movie");
 
 module.exports = {
-getMovies: async() => {
-    try{
-    const movies = await Movie.find();
-    const moviesCollection = movies.map((movie) => {
-      if(movieValidation(movie)) {
-        return new Movie (movie);
-      }
-    });
-    return moviesCollection;
-  } catch(error) {
-    throw Error(error.message);
-  }
-  },
-};
+    getMovies: async () => {
+        const movies = await Movie.find();
+        return movies;
+    },
 
-
-async function createMovie(title, year, director, duration, genre, poster) {
-    try {
-        const newMovie = new Movie({
-            title,
-            year,
-            director,
-            duration,
-            genre,
-            poster
-        });
-        await newMovie.save();
-        return newMovie;
-    } catch (error) {
-        throw new Error('Error al crear película');
+    postMovie: async (movie) => {
+        const newMovie = new Movie(movie);
+        const savedMovie = await newMovie.save();
+        return savedMovie;
     }
-}
-
-module.exports = {
-    getMovies, createMovie
 };
-
 
