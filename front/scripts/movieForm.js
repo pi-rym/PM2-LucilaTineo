@@ -1,31 +1,53 @@
-function cleanForm(){
-    document.getElementById("movieForm").reset();
+document.addEventListener("DOMContentLoaded", function() {
+    
+
+function validateForm({
+    title, year, director, duration, genre, poster, rate
+}) {
+    rate = parseFloat(rate);
+    if (!title || !year || !director || !duration || !genre || genre.length === 0 || isNaN(rate) || rate < 1 || rate > 10 || !poster) {
+        return "Por favor complete todos los campos correctamente";
 }
 
-document.getElementById("movieForm").addEventListener("submit", submitForm)
+if (isNaN(year) || year.length !== 4) {
+    return "El año debe ser un número de 4 dígitos.";
+}
 
-function submitForm(event) {
+return null;
+}
+
+
+function createMovie(event) {
     event.preventDefault();
 
-    var title = document.getElementById("title").value;
-    var year = document.getElementById("year").value;
-    var director = document.getElementById("director").value;
-    var duration = document.getElementById("duration").value;
-    var genre = document.getElementById("genre").value;
-    var poster = document.getElementById("image").value;
- 
-    if(!title|| !year|| !director|| !duration|| !genre|| !poster){
-        mostrarPelicula(title, year, director, duration, genre, poster)
-        console.log("Formulario enviado exitosamente");
-        cleanForm();
-    } else {
-        alert("Por favor complete todos los campos");
-        }
-    }
+    const title = document.getElementById("title").value;
+    const year = document.getElementById("year").value;
+    const director = document.getElementById("director").value;
+    const duration = document.getElementById("duration").value;
+    const genre = document.getElementById("genre").value.split(",");
+    const rate = document.getElementById("rate").value;
+    const poster = document.getElementById("poster").value;
 
-    function mostrarPelicula(title, year, director, duration, genre, poster) {
-        const movieList = document.getElementById("movieList");
-        const listItem = document.createElement("li");
-        listItem.textContent = `Titulo: ${title}, Año: ${year}, Director: ${director}, Duracion: ${duration}, Género: ${genre}, Poster: ${poster}`,
-        movieList.appendChild(listItem);
-    }
+    const newMovie = { title, year, director, duration, genre, rate, poster };
+
+    const error = validateForm(newMovie);
+    if (error) return alert(error);
+
+    axios.post("http://localhost:3000/movies", newMovie)
+            .then(res => {
+                console.log('Pelicula creada correctamente.', res.data);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+}
+
+function cleanInputs() {
+    document.getElementById("movies-form").reset();
+}
+
+const btnSubmit = document.getElementById("submit_button");
+btnSubmit.addEventListener('click', createMovie);
+const btnClean = document.getElementById("clean_button");
+btnClean.addEventListener('click', cleanInputs);
+});

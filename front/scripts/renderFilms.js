@@ -1,24 +1,30 @@
-const filmSection = document.getElementById('films')
+function renderFilms(movie) {
+    const filmSection = document.getElementById('contenedor-peliculas');
+    const movieCard = document.createElement('div');
+    movieCard.classList.add('card');
 
-function renderFilms (movie){
-    const movieElement = document.createElement('article')
-    const containerMovie = document.createElement('div')
+    const cardImage = document.createElement('img');
+    cardImage.classList.add('card-img-top');
+    cardImage.src = movie.poster;
+    cardImage.alt = movie.title;
 
-    movieElement.classList.add('movie')
-    containerMovie.classList.add('divMovie')
+    const cardBody = document.createElement('div');
+    cardBody.classList.add('card-body');
 
-    movieElement.innerHTML = `<img src="${movie.poster}" alt="${movie.title}">`
-    
-    containerMovie.innerHTML = `
-    <h3>${movie.title} (${movie.year})</h3>
-    <p><strong>Director:</strong> ${movie.director}</p>
-    <p><strong>Duración:</strong> ${movie.duration}</p>
-    <p><strong>Género:</strong> ${movie.genre.join(',')}</p>
-    <p><strong>Rate:</strong> ${movie.rate}</p>
-    `
+    const cardTitle = document.createElement('h5');
+    cardTitle.classList.add('card-title');
+    cardTitle.textContent = movie.title;
 
-    filmSection.appendChild(movieElement)
-    movieElement.appendChild(containerMovie)
+    const cardText = document.createElement('p');
+    cardText.classList.add('card-text');
+    cardText.textContent = `${movie.year} | Director: ${movie.director}`;
+
+    cardBody.appendChild(cardTitle);
+    cardBody.appendChild(cardText);
+
+    movieCard.appendChild(cardImage);
+    movieCard.appendChild(cardBody);
+
+    filmSection.appendChild(movieCard);
 }
-
-module.exports = renderFilms
+module.exports = renderFilms;
