@@ -1,4 +1,3 @@
-//const {Movie} = require("../types/class")
 const Movie = require("../models/movie");
 
 module.exports = {
